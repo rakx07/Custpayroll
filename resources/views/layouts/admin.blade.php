@@ -13,92 +13,131 @@
 
     <!-- Custom CSS -->
     <style>
+        /* Wrapper for the entire layout to create a flex container */
         .wrapper {
-            display: flex;
-            min-height: 100vh;
+            display: flex; /* Enables flexible box layout */
+            min-height: 100vh; /* Sets the minimum height to fill the viewport */
         }
 
+        /* Sidebar styling */
         #sidebar {
-            min-width: 250px;
-            max-width: 250px;
-            background: #343a40;
-            color: white;
-            transition: all 0.3s;
+            min-width: 250px; /* Minimum width of the sidebar */
+            max-width: 250px; /* Maximum width of the sidebar */
+            background: #343a40; /* Dark background color */
+            color: white; /* Text color */
+            transition: all 0.3s; /* Smooth transition for the sidebar toggle */
         }
 
         #sidebar ul.components {
-            padding: 0;
+            padding: 0; /* Removes padding from the sidebar navigation list */
         }
 
+        /* Sidebar header styling */
         .sidebar-header {
-            background: #23272b;
-            padding: 20px;
+            background: #23272b; /* Darker background for the sidebar header */
+            padding: 20px; /* Padding for spacing */
         }
 
+        /* Sidebar list item styling */
         #sidebar ul li {
-            padding: 10px;
-            font-size: 1.1rem;
+            padding: 10px; /* Padding inside list items */
+            font-size: 1.1rem; /* Increases font size */
         }
 
+        /* Link styling in the sidebar */
         #sidebar ul li a {
-            color: white;
-            display: block;
-            text-decoration: none;
-            padding: 10px;
-            transition: background 0.3s ease;
+            color: white; /* Text color for links */
+            display: block; /* Makes the entire area clickable */
+            text-decoration: none; /* Removes underline from links */
+            padding: 10px; /* Padding inside links */
+            transition: background 0.3s ease; /* Smooth background change on hover */
         }
 
+        /* Hover effect for links */
         #sidebar ul li a:hover {
-            background: #495057;
+            background: #495057; /* Lighter background on hover */
         }
 
+        /* Active state styling for the current page */
         #sidebar ul li.active > a {
-            background: #007bff;
-            color: white;
+            background: #007bff; /* Highlighted background for the active link */
+            color: white; /* Text color for the active link */
         }
 
+        /* Styling for when the sidebar is collapsed */
         #sidebar.active {
-            margin-left: -250px;
+            margin-left: -250px; /* Moves the sidebar out of view */
         }
 
+        /* Content area styling */
         #content {
-            flex-grow: 1;
-            padding: 20px;
-            background: #f8f9fa;
+            flex-grow: 1; /* Allows the content area to expand */
+            padding: 20px; /* Padding for spacing */
+            background: #f8f9fa; /* Light background color for content */
         }
 
+        /* Navbar styling */
         .navbar {
-            padding: 15px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #dee2e6;
+            padding: 15px; /* Padding for the navbar */
+            background: #f8f9fa; /* Light background for the navbar */
+            border-bottom: 1px solid #dee2e6; /* Bottom border for separation */
         }
 
+        /* Align dropdown menu to the right */
         .dropdown-menu-right {
-            right: 0;
-            left: auto;
+            right: 0; /* Aligns dropdown menu to the right */
+            left: auto; /* Prevents automatic left alignment */
         }
 
+        /* Profile link styling */
         .navbar .profile-link {
-            display: flex;
-            align-items: center;
+            display: flex; /* Enables flex layout for the profile link */
+            align-items: center; /* Vertically centers the profile icon and text */
         }
 
+        /* Icon styling in the profile link */
         .navbar .profile-link i {
-            font-size: 1.5rem;
-            margin-right: 5px;
+            font-size: 1.5rem; /* Increases icon size */
+            margin-right: 5px; /* Spacing between icon and text */
         }
 
+        /* Adjust the toggle button to be closer to the sidebar */
+        #sidebarCollapse {
+            margin-left: 0; /* Removes left margin for the toggle button */
+        }
+
+        /* Dropdown menu background color */
+        .dropdown-menu {
+            background-color: #343a40; /* Dark gray background for dropdown */
+        }
+
+        /* Change text color inside dropdown to white */
+        .dropdown-menu .dropdown-item {
+            color: white; /* White text color for dropdown items */
+        }
+
+        /* Change the hover background color for dropdown items */
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #495057; /* Slightly lighter gray on hover */
+        }
+
+        /* Media query for responsive design */
         @media (max-width: 768px) {
             #sidebar {
-                margin-left: -250px;
+                margin-left: -250px; /* Hides sidebar on smaller screens */
             }
 
             #sidebar.active {
-                margin-left: 0;
+                margin-left: 0; /* Shows sidebar when active */
             }
 
             #content {
-                width: 100%;
+                width: 100%; /* Full width for content area on smaller screens */
+            }
+
+            /* Adjust the toggle button for mobile to be nearer */
+            #sidebarCollapse {
+                margin-left: 0; /* Removes left margin for the toggle button */
             }
         }
     </style>
@@ -113,6 +152,7 @@
             <ul class="list-unstyled components">
                 <li><a href="{{ route('employee.index') }}">Employee</a></li>
                 <li><a href="{{ route('payroll.index') }}">Payroll</a></li>
+                <li><a href="{{ route('employee.index') }}">Department</a></li>
                 <!-- Dropdown -->
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" id="govDeductionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -173,7 +213,7 @@
         // Sidebar toggle functionality
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
+                $('#sidebar').toggleClass('active'); // Toggles the active class on the sidebar
             });
         });
     </script>
