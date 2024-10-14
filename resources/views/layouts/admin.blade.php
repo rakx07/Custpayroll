@@ -150,7 +150,7 @@
                 <h3>Admin Dashboard</h3>
             </div>
             <ul class="list-unstyled components">
-                <li><a href="{{ route('employee.index') }}">Employee</a></li>
+                <li><a href="{{ route('employee.create') }}">Employee</a></li>
                 <li><a href="{{ route('payroll.index') }}">Payroll</a></li>
                 <li><a href="{{ route('employee.index') }}">Department</a></li>
                 <!-- Dropdown -->
