@@ -8,7 +8,7 @@ class CreateEmployeeTable extends Migration
 {
     public function up()
     {
-        Schema::create('employee', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->string('EmployeeID', 50)->primary();
             $table->string('LastName');
             $table->string('FirstName');
@@ -59,6 +59,6 @@ class CreateEmployeeTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('employee');
+        Schema::dropIfExists('employees');
     }
 }
