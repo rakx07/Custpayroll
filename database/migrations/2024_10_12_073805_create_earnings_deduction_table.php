@@ -11,7 +11,7 @@ class CreateEarningsDeductionTable extends Migration
         Schema::create('earnings_deduction', function (Blueprint $table) {
             $table->integer('PeriodNo');
             $table->integer('Quincena');
-            $table->string('EmployeeID', 50);
+            $table->string('Employee_id', 50);
             $table->string('DescCode', 50);
             $table->decimal('TransAmount', 10, 2);
             $table->decimal('OriginalAmount', 10, 2);

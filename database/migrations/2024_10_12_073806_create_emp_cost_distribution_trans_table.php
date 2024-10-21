@@ -11,7 +11,7 @@ class CreateEmpCostDistributionTransTable extends Migration
         Schema::create('emp_cost_distribution_trans', function (Blueprint $table) {
             $table->integer('PeriodNo');
             $table->integer('Quincena');
-            $table->string('EmployeeID', 50);
+            $table->string('Employee_id', 50);
             $table->string('DeptCode', 50);
             $table->decimal('AmtDirect', 10, 2);
             $table->decimal('AmtIndirect', 10, 2);

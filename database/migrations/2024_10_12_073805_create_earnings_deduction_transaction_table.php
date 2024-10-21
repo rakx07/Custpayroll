@@ -9,7 +9,7 @@ class CreateEarningsDeductionTransactionTable extends Migration
     public function up()
     {
         Schema::create('earnings_deduction_transaction', function (Blueprint $table) {
-            $table->string('EmployeeID', 50);
+            $table->string('Employee_id', 50);
             $table->integer('PeriodNo');
             $table->integer('Quincena');
             $table->string('DescCode', 50);

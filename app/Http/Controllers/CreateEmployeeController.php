@@ -28,7 +28,7 @@ class CreateEmployeeController extends Controller
     {
         // Validate the request
         $validated = $request->validate([
-            'employee_id' => 'required|unique:employees,EmployeeID|max:10',
+            'employee_id' => 'required|unique:employees,Employee_id|max:10',
             'last_name' => 'required|string|max:255',
             'first_name' => 'required|string|max:255',
             'middle_name' => 'nullable|string|max:255',
@@ -60,7 +60,7 @@ class CreateEmployeeController extends Controller
 
         // Create a new employee record
         Employees::create([
-            'EmployeeID' => $request->employee_id,
+            'Employee_id' => $request->employee_id,
             'LastName' => $request->last_name,
             'FirstName' => $request->first_name,
             'MiddleName' => $request->middle_name,

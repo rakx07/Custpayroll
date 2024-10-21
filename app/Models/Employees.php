@@ -13,11 +13,11 @@ class Employees extends Model
     protected $table = 'Employees';  // Assuming the table name is 'Employee'
     
     // Set the primary key if it's not 'id'
-    protected $primaryKey = 'EmployeeID';
+    protected $primaryKey = 'Employee_id';
 
     // Allow mass assignment on these fields
     protected $fillable = [
-        'EmployeeID',
+        'Employee_id',
         'LastName',
         'FirstName',
         'MiddleName',

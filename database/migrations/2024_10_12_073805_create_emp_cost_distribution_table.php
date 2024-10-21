@@ -9,7 +9,7 @@ class CreateEmpCostDistributionTable extends Migration
     public function up()
     {
         Schema::create('emp_cost_distribution', function (Blueprint $table) {
-            $table->string('EmployeeID', 50);
+            $table->string('Employee_id', 50);
             $table->string('DeptCode', 50);
             $table->decimal('Percent', 5, 2);
         });

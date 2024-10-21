@@ -1,15 +1,18 @@
 <?php
 
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEmployeeTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     public function up()
     {
+        
         Schema::create('employees', function (Blueprint $table) {
-            $table->string('EmployeeID', 50)->primary();
+            $table->id();
+            $table->string('Employee_id', 50)->unique(); // Make sure this matches the foreign key in transactions table
             $table->string('LastName');
             $table->string('FirstName');
             $table->string('MiddleName');
@@ -61,4 +64,4 @@ class CreateEmployeeTable extends Migration
     {
         Schema::dropIfExists('employees');
     }
-}
+};
